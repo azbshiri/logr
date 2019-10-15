@@ -69,7 +69,7 @@ func defaultLogger(ctx context.Context) FieldLogr {
 	if span != nil {
 		zs, ok := span.Context().(zipkintracing.SpanContext)
 		if ok {
-			traceID := zs.TraceID.ToHex()
+			traceID := zs.TraceID.String()
 			fields[TraceKey] = traceID
 		}
 	}
